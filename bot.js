@@ -1,20 +1,20 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "&"
-var adminprefix = '&'
+var prefix = "$"
+var adminprefix = '$'
 
 
 //bc
 
 client.on("message", message => {
-    if (message.content.startsWith("&obc")) {
-                 if(!message.author.id == '340580530951290880') return;
+    if (message.content.startsWith("$obc")) {
+                 if(!message.author.id == '732501602216312843') return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
   m.send(`${argresult}\n ${m}`);
   })
-  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  عدد المستلمين `);
+  message.channel.send(`\`${message.guild.members.filter( m => m.presence.status !== 'all').size}\`:mailbox:  sent ppl `);
   message.delete();
   };
   });
@@ -23,25 +23,25 @@ client.on("message", message => {
 //bc online
 
 
-  var prefix = "&";
+  var prefix = "$";
 
   client.on("message", message => {
   
               if (message.content.startsWith(prefix + "bc")) {
-                           if(!message.author.id == '340580530951290880') return;
+                           if(!message.author.id == '732501602216312843') return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
    m.send(`${argresult}\n ${m}`);
   })
-   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  عدد المستلمين `); 
+   message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` :mailbox:  sent ppl `); 
    message.delete(); 
   };     
   });
 
 client.on('message', message => {
     var  user = message.mentions.users.first() || message.author;
-if (message.content.startsWith("&avatar")) {
+if (message.content.startsWith("$avatar")) {
 message.channel.send(`This avatar For ${user} link : ${user.avatarURL}`);
 }
 });
@@ -58,7 +58,7 @@ client.on('ready',  () => {
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('&adminbc')){
 if(!message.author.id === '518816831734022154') return;
-message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
+message.channel.sendMessage('waiting for message to sent |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
 })
@@ -66,7 +66,7 @@ m.sendMessage(args)
 });
 
   client.on('message', msg => {
-    if(msg.content === '&help')
+    if(msg.content === '$help')
     msg.reply('Check Your DM :white_check_mark:')
   });
   
@@ -77,9 +77,9 @@ m.sendMessage(args)
          .setColor("#00FF00")
          .setThumbnail(message.author.avatarURL)
          .setDescription(`**Help|هيلب
-       $obc | لأرسال برود كاست للكل
-       $bc  |  لأرسال برود كاست للأونلاين
-       $adminbc | برودكاست عادي
+       $obc | to sent broadcast for all
+       $bc  |  to sent broadcast for online
+       $adminbc | normal broadcastt
        ** `)
    message.author.sendEmbed(embed)
    
