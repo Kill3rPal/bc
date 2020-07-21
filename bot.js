@@ -8,7 +8,7 @@ var adminprefix = '$'
 
 client.on("message", message => {
     if (message.content.startsWith("$obc")) {
-                 if(!message.author.id == '732501602216312843') return;
+                 if(!message.author.id == '720115877873451048') return;
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' ');
   message.guild.members.filter(m => m.presence.status !== 'all').forEach(m => {
@@ -28,7 +28,7 @@ client.on("message", message => {
   client.on("message", message => {
   
               if (message.content.startsWith(prefix + "bc")) {
-                           if(!message.author.id == '732501602216312843') return;
+                           if(!message.author.id == '720115877873451048') return;
     let args = message.content.split(" ").slice(1);
     var argresult = args.join(' '); 
     message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
@@ -57,7 +57,7 @@ client.on('ready',  () => {
     if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('&adminbc')){
-if(!message.author.id === '518816831734022154') return;
+if(!message.author.id === '720115877873451048') return;
 message.channel.sendMessage('waiting for message to sent |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
