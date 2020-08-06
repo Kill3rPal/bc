@@ -139,7 +139,7 @@ client.on("message", msg => {
         **
         اقصى الاستخدام : mem 10
         رابط السيرفر : <https://discord.gg/${i.code}>
-        السيرفر : ${g.name} | Id : ${g.id}//Shady Craft YT#4176
+        السيرفر : ${g.name} | Id : ${g.id}//!P H'                 Kᴶᴷ#2247
         صاحب السيرفر : ${g.owner} 
         **
         `)
